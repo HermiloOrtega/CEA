@@ -1,65 +1,58 @@
 # 📦 CEA
 
 ## 🧭 Overview
-- Short Summary of the app and what problem it solves. 
-- Include a screnshot of GIF here is possible.
-![Screenshot](./assets/screenshot.png) <!-- Replace with your image path -->
+**CEA** is a Windows-based committee approval system used to track, present, and approve large purchase requests across multiple management levels.
+
+### Register case
+![Screenshot](./assets/4.png)
+
+![Screenshot](./assets/13.jpg)
+
+### Approve cases screen
+![Screenshot](./assets/2.png)
 
 ## 💡 Idea & Concept
-- What inspired this? 
-- Who is it for? 
+- Centralize the submission and approval process for purchases over 500,000 MXN.
+- Digitize manual Excel/PPT workflows.
+- Improve transparency and auditability.
 
 ## ✨ Features & Functionality
-- Bullet list of main features 
+- Case registration with attachments.
+- Approval workflows through managers, sub-directors, and directors.
+- Committee session creation and case groupings.
+- Crystal Report document generation for sign-off.
+
+## 🧠 Advanced System Features
+- **Session Tracking**: System records user login and logout with precise timestamps. If an abrupt logout occurs, a fallback (+30 minutes) is applied to maintain data integrity.
+- **Forced Session Termination**: System administrators can remotely force a logout if updates or urgent maintenance are required.
+- **User Activity Logging**: All critical user actions (screen access, record creation, updates) are logged for auditing, analytics, and feature usage tracking.
 
 ## ⚙️ Tech Stack
-- Language(s), framework, libraries, services, tools, deployment platform. 
+- C# Windows Forms
+- SQL Server
+- Crystal Reports
+- Visual Studio
 
 ## 🏗 Architecture & Design
-- Describe how its structured (e.g., MVC, Monolith, Microservices)
-- Include diagrams if applicable 
+- Ribbon-style UI similar to Microsoft Office.
+- Session-based case management.
+- Image storage and handling.
 
 ## 🚀 Installation & Setup
-- **Prerequisites:** 
+- Windows OS and SQL Server setup internally.
+- SSL and internal-only access.
 
-- **Installation Steps:** 
-
-- **Deployment Environment:** 
-
-- **Access:** 
-
-> **Note:** 
-
-## 🧑‍💻 Usage
-- How to use the software after setup 
-- CLI Commands, UI Walkthrough, or API Endpoints. 
-
-## 🔍 My Role & Contributions
-- 💼 Full-stack development
-- 🧱 Architecture design
-- 🐞 Bug fixing and optimization
-- 🤝 Collaboration with design/product teams
+## 🧑‍💻 My Role & Contributions
+- Designed and built full-stack system including UI and reporting.
+- Architected database and case workflows.
 
 ## 🧗 Challenges & Learnings
-- Major issues you faced and how you overcome them.
-- What you learned from the process.
+- Streamlining cross-departmental workflows.
+- Image and document optimization for SQL Server.
 
 ## 📈 Future Enhancements
-- Features you plan to build. 
-- Known bugs or technical debt. 
-
-## 🤝 Contributing
-- How other can contribute (if open source)
+- Web-based portal for remote presentation.
+- Enhanced analytics for case tracking.
 
 ## 🪪 License
-⚠️ License Notice  
-This repository was originally published under the MIT License.  
-As of April 22, 2025, the license has been changed to **CC BY-NC-ND 4.0**.  
-See the LICENSE file for details.
-
-## 🔗 Additional Resources
-- **Documentation:** 
-
-- **Related Projects:** 
-
-- **Live Demo Link:** 
+⚠️ Internal project under AHMSA policies.
