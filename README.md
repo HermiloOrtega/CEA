@@ -1,7 +1,11 @@
-# 📦 CEA
+
+# 🧾 CEA – Comité de Evaluación de Adquisiciones
 
 ## 🧭 Overview
-**CEA** is a Windows-based committee approval system used to track, present, and approve large purchase requests across multiple management levels.
+**CEA** is a robust internal Windows application developed in **C#** and **SQL Server** using **Visual Studio** at AHMSA to streamline high-value procurement request workflows.  
+The system digitizes the manual process of preparing, approving, and reviewing purchase cases exceeding 500,000 MXN for weekly director-level meetings.
+
+It replaced Excel files, screenshots, and PowerPoint presentations used for procurement review committees, drastically improving control, transparency, and traceability.
 
 ### Register case
 ![Screenshot](./assets/4.png)
@@ -12,47 +16,75 @@
 ![Screenshot](./assets/2.png)
 
 ## 💡 Idea & Concept
-- Centralize the submission and approval process for purchases over 500,000 MXN.
-- Digitize manual Excel/PPT workflows.
-- Improve transparency and auditability.
+The system automates an error-prone workflow that included:
+- Collecting purchase cases via email
+- Building weekly PowerPoint slides for director meetings
+- Manually tracking who approved each request
+- Relying on screenshots and inconsistent documentation
+
+CEA centralizes this in a secure, session-based system with automated approval flows and presentation export.
 
 ## ✨ Features & Functionality
-- Case registration with attachments.
-- Approval workflows through managers, sub-directors, and directors.
-- Committee session creation and case groupings.
-- Crystal Report document generation for sign-off.
-
-## 🧠 Advanced System Features
-- **Session Tracking**: System records user login and logout with precise timestamps. If an abrupt logout occurs, a fallback (+30 minutes) is applied to maintain data integrity.
-- **Forced Session Termination**: System administrators can remotely force a logout if updates or urgent maintenance are required.
-- **User Activity Logging**: All critical user actions (screen access, record creation, updates) are logged for auditing, analytics, and feature usage tracking.
+- 🔐 Login with multi-environment support (DEV/QAS/PRD)
+- 🚫 3-failure lockout, screen restrictions, and singleton session per user
+- 🆕 Register New Cases with:
+  - Title, type, value, currency, vendor, contract linkage, cost code
+  - Screenshots (stored as images in DB), justification, documents
+- 🔁 Approval Flows:
+  - Auto-notifies managers, sub-directors, director of purchasing
+  - Auto-disables edits after approval
+- 🧾 Session Logs:
+  - Session numbers grouped per week; used for meeting prep
+- 📊 Admin Tools:
+  - Create weekly sessions
+  - Lock system for updates
+  - Broadcast urgent messages
+  - View version and force-close users if needed
+- 📤 Crystal Reports generator to create the official PDF of approved cases
+- ✅ Post-meeting review: Approve/reject/postpone by committee
 
 ## ⚙️ Tech Stack
-- C# Windows Forms
-- SQL Server
-- Crystal Reports
-- Visual Studio
+- **Language:** C#
+- **Framework:** .NET WinForms
+- **Database:** SQL Server
+- **Reporting:** Crystal Reports
+- **IDE:** Visual Studio
 
 ## 🏗 Architecture & Design
-- Ribbon-style UI similar to Microsoft Office.
-- Session-based case management.
-- Image storage and handling.
+- RibbonBar interface with embedded screen routing
+- Modular design per session, case registration, approvals, and reporting
+- Admin tab for emergency controls and infrastructure monitoring
+- Screens are embedded via child-form architecture
 
 ## 🚀 Installation & Setup
-- Windows OS and SQL Server setup internally.
-- SSL and internal-only access.
+- **Deployment:** Internal Windows machines via shared folder
+- **Startup:** Auto-start with singleton check
+- **Permissions:** Role-based: purchasers, managers, admin
+
+> **Note:** All media and logs are saved securely in the database for auditing.
 
 ## 🧑‍💻 My Role & Contributions
-- Designed and built full-stack system including UI and reporting.
-- Architected database and case workflows.
+- 💼 Sole developer and architect
+- 🧱 Designed schema, reports, approval flows, and logic from scratch
+- 🧠 Developed admin tools and usage tracking
+- 🔄 Integrated **[CEA Web](https://github.com/HermiloOrtega/CEA-Web)** and **[CEA Offline](https://github.com/HermiloOrtega/CEA-Offline)** compatibility
 
 ## 🧗 Challenges & Learnings
-- Streamlining cross-departmental workflows.
-- Image and document optimization for SQL Server.
+- Migrated fully manual Excel/PPT process to an automated app
+- Built resilient approval workflows and embedded media management
+- Designed fallback session logic and forced logout/update functions
+- Handled complex logic for reporting and role-based review screens
 
 ## 📈 Future Enhancements
-- Web-based portal for remote presentation.
-- Enhanced analytics for case tracking.
+- Integrate digital signature support
+- Replace Crystal Reports with modern PDF exports
+- Migrate UI to web or hybrid for directors' mobile devices
 
 ## 🪪 License
-⚠️ Internal project under AHMSA policies.
+⚠️ **Internal Use Only**  
+Originally published under MIT; changed to **CC BY-NC-ND 4.0** as of April 22, 2025.
+
+## 🔗 Related Projects
+- **[CEA](https://github.com/HermiloOrtega/CEA)**
+- **[CEA Web](https://github.com/HermiloOrtega/CEA-Web)**
+- **[CEA Offline](https://github.com/HermiloOrtega/CEA-Offline)**
