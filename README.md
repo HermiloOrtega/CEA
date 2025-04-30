@@ -1,5 +1,5 @@
 
-# 🧾 CEA – Comité de Evaluación de Adquisiciones
+# 🧾 CEA – Comite ejecutivo de Abastecimientos
 
 ## 🧭 Overview
 **CEA** is a robust internal Windows application developed in **C#** and **SQL Server** using **Visual Studio** at AHMSA to streamline high-value procurement request workflows.  
